@@ -122,11 +122,11 @@ Magnus Sörensen and Wicktor Löw
 \end_layout
 
 \begin_layout Section
-Problem 1
+Quadratic and linear convergence of newton Raphson method.
 \end_layout
 
 \begin_layout Subsection
-Description
+Description - Problem 1
 \end_layout
 
 \begin_layout Standard
@@ -201,6 +201,21 @@ reference "subsec:Results"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Description - Problem 2
+\end_layout
+
+\begin_layout Standard
+Determine for which root the convergence is quadratic, and also compute
+ the asymptotic error constant A.
+ 2.
+ If for one of the roots the method does not show quadratic convergence,
+ explain why it doesn't, i.e.
+ why the theorem on quadratic convergence isn't applicable.
+ 3.
+ Does it obey linear convergence? If yes, why?
 \end_layout
 
 \begin_layout Subsection
@@ -508,6 +523,10 @@ name "tab:Table-for-root-2"
 Analysis of results
 \end_layout
 
+\begin_layout Subsubsection
+Problem 1
+\end_layout
+
 \begin_layout Enumerate
 Fig 
 \begin_inset CommandInset ref
@@ -571,24 +590,71 @@ reference "subsec:Tables-with-absolute"
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsubsection
 Problem 2
 \end_layout
 
-\begin_layout Subsection
-Description
-\end_layout
+\begin_layout Standard
+From table1 we see that the root 
+\begin_inset Formula $x=2$
+\end_inset
 
-\begin_layout Subsection
-Solution
-\end_layout
+ seems to converge when
+\begin_inset Formula $R=1$
+\end_inset
 
-\begin_layout Subsection
-Results
-\end_layout
+ very steadily.
+ For 
+\begin_inset Formula $x_{1}\approx0.857$
+\end_inset
 
-\begin_layout Subsection
-Analysis of results
+ however with so few iterations it is hard to see any convergence, but we
+ conclude that for 
+\begin_inset Formula $R=2$
+\end_inset
+
+ it seems to converge to a value.
+ Our conclusion is that 
+\begin_inset Formula $x_{2}=2$
+\end_inset
+
+ has a linear convergence and 
+\begin_inset Formula $x_{1}\approx0.857$
+\end_inset
+
+ has a quadratic convergence.
+ Using the formula 
+\begin_inset Formula $M=\frac{f’’(x)2}{f’(x)}$
+\end_inset
+
+ we get 
+\begin_inset Formula $M=2.413850894567771$
+\end_inset
+
+ which correlates with the value 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ seems to converge to.
+ This is also the asymptotic error constant.
+ For 
+\begin_inset Formula $x=2,A=0.66XXX$
+\end_inset
+
+ and for 
+\begin_inset Formula $x_{1}=0.857$
+\end_inset
+
+, 
+\begin_inset Formula $A=2.4XXX$
+\end_inset
+
+.
+ 2.
+ For the root x = 2 the method doesn't show quadratic convergence, this
+ is because x = 2 is a root but also an extreme point for the function so
+ the derivative at this point is zero which yields division by zero using
+ the formula to compute M.
 \end_layout
 
 \end_body

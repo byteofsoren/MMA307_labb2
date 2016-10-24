@@ -1,4 +1,4 @@
-  function [x] = newton(f,x0,tol1,tol2,iterNr)
+  function [x] = newton(f,df,x0,tol1,tol2,iterNr)
 
   % The function newton.m solves a nonlinear
   % equation f(x) = 0 using the Newton-Raphson method
@@ -12,7 +12,8 @@
   %      iterNr - maximum number of iterations
   % Output:
   %      x - sequence of root estimates
-    df = @(x) cdd(f, x);
+    %df = @(x) cdd(f, x);
+
 	x(1)=x0;
   	for k=2:iterNr
     	x(k)=x(k-1)-f(x(k-1))/df(x(k-1));
