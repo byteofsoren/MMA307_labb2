@@ -26,6 +26,6 @@ root(1) = fzero(f, 0.8);
 t_writer2('table_t1.dat', Ei1, Er1,Er12)
 t_writer2('table_t2.dat', Ei2, Er2,Er22)
 
-A1 = Er1(end)
+A1 = Er12(end)
 A2 = Er2(end)
 M = abs(ddf(root(1)))/abs((2*df(root(1))))

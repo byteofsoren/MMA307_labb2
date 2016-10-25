@@ -317,7 +317,7 @@ Table with iterations.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -447,7 +447,7 @@ name "subsec:Tables-with-absolute"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -500,7 +500,7 @@ name "tab:Table-for-root-1"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -653,10 +653,13 @@ From table1 we see that the root
 
  has a quadratic convergence.
  Using the formula 
-\begin_inset Formula $M=\frac{f’’(x)2}{f’(x)}$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:equateM"
+
 \end_inset
 
- we get 
+we get 
 \begin_inset Formula $M=2.413850894567771$
 \end_inset
 
@@ -667,7 +670,7 @@ From table1 we see that the root
  seems to converge to.
  This is also the asymptotic error constant.
  For 
-\begin_inset Formula $x=2,\quad A=0.666528351347989$
+\begin_inset Formula $x=2,A=0.666528351347989$
 \end_inset
 
  and for 
@@ -675,27 +678,45 @@ From table1 we see that the root
 \end_inset
 
 , 
-\begin_inset Formula $A=2.4XXX$
+\begin_inset Formula $A=2.402581739389790$
 \end_inset
 
 .
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M=\frac{f''(x)}{2*f(x)}\label{eq:equateM}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
 For the root x = 2 the method doesn't show quadratic convergence, this is
  because x = 2 is a root but also an extreme point for the function so the
  derivative at this point is zero which yields division by zero using the
- formula to compute M.
+ formula to compute using formula 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:equateM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
 The formula which calculates the asymptotic error constant 
-\begin_inset Formula $\frac{E(i+1)}{E(i)^{R}}=A$
+\begin_inset Formula $\frac{E_{(i+1)}}{E_{i}}=A$
 \end_inset
 
  rewritten to compute the next absolute error is 
-\begin_inset Formula $E(i+1)=A*E(i)^{R}$
+\begin_inset Formula $E_{(i+1)}=A*E_{i}^{R}$
 \end_inset
 
 .
