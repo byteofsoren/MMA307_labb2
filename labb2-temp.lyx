@@ -381,7 +381,7 @@ name "subsec:Plot-of"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -400,7 +400,7 @@ centering
 \begin_inset Graphics
 	filename figure1.svg
 	lyxscale 20
-	scale 30
+	scale 35
 
 \end_inset
 
@@ -628,7 +628,7 @@ From table1 we see that the root
 \begin_inset Formula $x=2$
 \end_inset
 
- seems to converge when
+ seems to converge when 
 \begin_inset Formula $R=1$
 \end_inset
 
@@ -659,7 +659,7 @@ reference "eq:equateM"
 
 \end_inset
 
-we get 
+ we get 
 \begin_inset Formula $M=2.413850894567771$
 \end_inset
 
@@ -670,19 +670,22 @@ we get
  seems to converge to.
  This is also the asymptotic error constant.
  For 
-\begin_inset Formula $x=2,A=0.666528351347989$
-\end_inset
-
- and for 
 \begin_inset Formula $x_{1}=0.857$
 \end_inset
 
 , 
-\begin_inset Formula $A=2.402581739389790$
+\begin_inset Formula $A_{1}=2.402581739389790$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}=2,$
+\end_inset
+
+ 
+\begin_inset Formula $A_{2}=0.666528351347989$
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -697,10 +700,14 @@ M=\frac{f''(x)}{2*f(x)}\label{eq:equateM}
 \end_layout
 
 \begin_layout Enumerate
-For the root x = 2 the method doesn't show quadratic convergence, this is
- because x = 2 is a root but also an extreme point for the function so the
- derivative at this point is zero which yields division by zero using the
- formula to compute using formula 
+For the root 
+\begin_inset Formula $x=2$
+\end_inset
+
+ the method doesn't show quadratic convergence, this is because x = 2 is
+ a root but also an extreme point for the function so the derivative at
+ this point is zero which yields division by zero using the formula to compute
+ using formula 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:equateM"
