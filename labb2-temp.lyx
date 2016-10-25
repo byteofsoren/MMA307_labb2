@@ -207,15 +207,20 @@ reference "subsec:Results"
 Description - Problem 2
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Determine for which root the convergence is quadratic, and also compute
  the asymptotic error constant A.
- 2.
- If for one of the roots the method does not show quadratic convergence,
+\end_layout
+
+\begin_layout Enumerate
+If for one of the roots the method does not show quadratic convergence,
  explain why it doesn't, i.e.
  why the theorem on quadratic convergence isn't applicable.
- 3.
- Does it obey linear convergence? If yes, why?
+ 
+\end_layout
+
+\begin_layout Enumerate
+Does it obey linear convergence? If yes, why?
 \end_layout
 
 \begin_layout Subsection
@@ -233,7 +238,7 @@ name "subsec:Solution"
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "apply_newton.m"
-lstparams "language=Matlab"
+lstparams "language=Matlab,caption={Solution}"
 
 \end_inset
 
@@ -244,7 +249,7 @@ lstparams "language=Matlab"
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "calcerror.m"
-lstparams "language=Matlab"
+lstparams "language=Matlab,caption={Calculate error}"
 
 \end_inset
 
@@ -255,7 +260,29 @@ lstparams "language=Matlab"
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "newton.m"
-lstparams "language=Matlab"
+lstparams "language=Matlab,caption={Newton}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "t_writer.m"
+lstparams "language=Matlab,caption={Wrtite to disk1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "t_writer2.m"
+lstparams "language=Matlab,caption={Write to disk2}"
 
 \end_inset
 
@@ -291,8 +318,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-tiny
 \backslash
 centering 
 \backslash
@@ -414,7 +439,7 @@ name "subsec:Tables-with-absolute"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -423,8 +448,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-tiny
 \backslash
 centering 
 \backslash
@@ -469,7 +492,7 @@ name "tab:Table-for-root-1"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -478,8 +501,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-tiny
 \backslash
 centering 
 \backslash
@@ -594,22 +615,104 @@ reference "subsec:Tables-with-absolute"
 Problem 2
 \end_layout
 
-\begin_layout Standard
-From table1 we see that the root x = 2 seems to converge when R = 1 very
- steadily.
- For x = 0.85XX however with so few iterations it is hard to see any convergence,
- but we conclude that for R = 2 it seems to converge to a value.
- Our conclusion is that x = 2 has a linear convergence and x = 85XX has
- a quadratic convergence.
- Using the formula M = f’’(x)/2f’(x) we get M = 2.XXX which correlates with
- the value x1 seems to converge to.
+\begin_layout Enumerate
+From table1 we see that the root 
+\begin_inset Formula $x=2$
+\end_inset
+
+ seems to converge when
+\begin_inset Formula $R=1$
+\end_inset
+
+ very steadily.
+ For 
+\begin_inset Formula $x_{1}\approx0.857$
+\end_inset
+
+ however with so few iterations it is hard to see any convergence, but we
+ conclude that for 
+\begin_inset Formula $R=2$
+\end_inset
+
+ it seems to converge to a value.
+ Our conclusion is that 
+\begin_inset Formula $x_{2}=2$
+\end_inset
+
+ has a linear convergence and 
+\begin_inset Formula $x_{1}\approx0.857$
+\end_inset
+
+ has a quadratic convergence.
+ Using the formula 
+\begin_inset Formula $M=\frac{f’’(x)2}{f’(x)}$
+\end_inset
+
+ we get 
+\begin_inset Formula $M=2.413850894567771$
+\end_inset
+
+ which correlates with the value 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ seems to converge to.
  This is also the asymptotic error constant.
- For x = 2, A = 0.66XXX and for x = 0.85XX, A = 2.4XXX.
- 2.
- For the root x = 2 the method doesn't show quadratic convergence, this
- is because x = 2 is a root but also an extreme point for the function so
- the derivative at this point is zero which yields division by zero using
- the formula to compute M.
+ For 
+\begin_inset Formula $x=2,A=0.66XXX$
+\end_inset
+
+ and for 
+\begin_inset Formula $x_{1}=0.857$
+\end_inset
+
+, 
+\begin_inset Formula $A=2.4XXX$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+For the root x = 2 the method doesn't show quadratic convergence, this is
+ because x = 2 is a root but also an extreme point for the function so the
+ derivative at this point is zero which yields division by zero using the
+ formula to compute M.
+\end_layout
+
+\begin_layout Enumerate
+The formula which calculates the asymptotic error constant 
+\begin_inset Formula $\frac{E(i+1)}{E(i)^{R}}=A$
+\end_inset
+
+ rewritten to compute the next absolute error is 
+\begin_inset Formula $E(i+1)=A*E(i)^{R}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $R=1$
+\end_inset
+
+ this is a linear equation, for 
+\begin_inset Formula $R=2$
+\end_inset
+
+ a quadratic equation and for 
+\begin_inset Formula $R=3$
+\end_inset
+
+ a cubic equation and so on.
+ For our case the root 
+\begin_inset Formula $x=2$
+\end_inset
+
+ converges when 
+\begin_inset Formula $R=1$
+\end_inset
+
+ and therefore follows linear convergence.
 \end_layout
 
 \end_body
