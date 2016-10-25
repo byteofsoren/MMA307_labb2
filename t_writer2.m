@@ -5,34 +5,34 @@ function t_writer2(filename, absT, relT, rel2T)
 %   absT = a matrix of absolut error.
 %   relT = a matrix of relative errors.
 %   rel2T = a matrix of square relative erros
-    fileID = fopen(filename, 'w')
-    lenMax = max(length(absT), length(relT))
-    lenMax = max(lenMax, length(rel2T))
+    fileID = fopen(filename, 'w');
+    lenMax = max(length(absT), length(relT));
+    lenMax = max(lenMax, length(rel2T));
 
-    str = sprintf(',abs,rel,rel2\n')
-    fprintf(fileID, str)
-    for i = 1:lenMax -1
+    str = sprintf(',abs,rel,rel2\n');
+    fprintf(fileID, str);
+    for i = 1:lenMax
         n = sprintf('%d,', i)
-        if (i < length(absT))
-            a = sprintf('%d,',absT(i))
+        if (i <= length(absT))
+            a = sprintf('%d,',absT(i));
         else
-            a = ','
+            a = ',';
         end
 
-        if (i < length(relT))
-            b = sprintf('%d,',relT(i))
+        if (i <= length(relT))
+            b = sprintf('%d,',relT(i));
         else
-            b = ','
+            b = ',';
         end
 
-        if (i < length(rel2T))
-            c = sprintf('%d',rel2T(i))
+        if (i <= length(rel2T))
+            c = sprintf('%d',rel2T(i));
         else
-            c = ''
+            c = '';
         end
         d = '\n'
         row = strcat(n,a,b,c,d);
         fprintf(fileID, row);
     end
-    fclose(fileID)
+    fclose(fileID);
 end

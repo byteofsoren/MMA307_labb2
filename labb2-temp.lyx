@@ -188,7 +188,15 @@ The absolute error
 \end_layout
 
 \begin_layout Itemize
-The absolute relative error ratio … that converges to a nonzero limit.
+The absolute relative error ratio 
+\begin_inset Formula $\frac{|E_{i+1}|}{|E_{i}|}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{|E_{i+1}|}{(|E_{i}|)^{2}}$
+\end_inset
+
+ that converges to a nonzero limit.
 \end_layout
 
 \end_deeper
@@ -659,7 +667,7 @@ From table1 we see that the root
  seems to converge to.
  This is also the asymptotic error constant.
  For 
-\begin_inset Formula $x=2,A=0.66XXX$
+\begin_inset Formula $x=2,\quad A=0.666528351347989$
 \end_inset
 
  and for 
